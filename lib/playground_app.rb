@@ -18,13 +18,13 @@ module PlaygroundApp
     end
 
     def migrations_hash
-      @_migrations_hash ||= Digest::MD5.hexdigest(ActiveRecord::Migrator.get_all_versions.to_s)
+      @migrations_hash ||= Digest::MD5.hexdigest(ActiveRecord::Migrator.get_all_versions.to_s)
     end
 
     def revision
       path = root.join('REVISION')
 
-      @_revision ||=
+      @revision ||=
         if File.exist?(path)
           begin
             File.read(path).strip.freeze

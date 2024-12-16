@@ -68,7 +68,7 @@ RSpec::Matchers.define_negated_matcher :not_yield_control, :yield_control
 Dir[Rails.root.join('spec/support/**/*.rb')].each(&method(:require))
 Dir[Rails.root.join('spec/support/helpers/*.rb')].each(&method(:require))
 
-RSpec.configure do |config|
+RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
   config.include ActiveJob::TestHelper
   config.include ActiveSupport::Testing::TimeHelpers
 
