@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'About endpoint', type: :request do
-
   let(:root_url) { '/' }
 
   describe 'GET #show' do

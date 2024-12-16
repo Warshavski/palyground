@@ -30,4 +30,14 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      resources:
+        not_found: "Couldn't find %{model} with id = %{id}"
+      routes:
+        not_found: 'Requested endpoint does not exists'
+
+      requests:
+        internal_server_error: '(ノಠ益ಠ)ノ彡┻━┻'
+        request_timeout: '┑(ツ)┍'
+        throttled: 'ಠ_ಠ Too many requests. Please, try again later.'

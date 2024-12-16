@@ -21,17 +21,19 @@ module Handlers
         handle_error(e, :not_found, status: :not_found)
       end
 
+      # TODO : setup Rack timeout gem
+      #
       # Return 408 - Request Timeout
       #
-      rescue_from Rack::Timeout::RequestTimeoutException do |e|
-        handle_error(e, :timeout, status: :request_timeout, send_report: true)
-      end
+      # rescue_from Rack::Timeout::RequestTimeoutException do |e|
+      #   handle_error(e, :timeout, status: :request_timeout, send_report: true)
+      # end
     end
 
     private
 
     def handle_error(error, type, status:, send_report: false, **opts)
-      log_error(error, send_report: send_report)
+      log_error(error, send_report:)
         .then { |err| serializer_error(err, type, status, opts) }
         .then { |representation| render_error(representation, status) }
     end
@@ -53,7 +55,7 @@ module Handlers
     end
 
     def render_error(representation, status)
-      render json: representation, status: status
+      render json: representation, status:
     end
   end
 end
