@@ -31,7 +31,7 @@ module Handlers
     private
 
     def handle_error(error, type, status:, send_report: false, **opts)
-      log_error(error, send_report: send_report)
+      log_error(error, send_report:)
         .then { |err| serializer_error(err, type, status, opts) }
         .then { |representation| render_error(representation, status) }
     end
@@ -53,7 +53,7 @@ module Handlers
     end
 
     def render_error(representation, status)
-      render json: representation, status: status
+      render json: representation, status:
     end
   end
 end

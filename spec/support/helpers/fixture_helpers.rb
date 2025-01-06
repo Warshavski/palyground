@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 module FixtureHelpers
   def fixture_file(filename, dir: '')
     return '' if filename.blank?
 
-    File.read(expand_fixture_path(filename, dir: dir))
+    File.read(expand_fixture_path(filename, dir:))
   end
 
   def expand_fixture_path(filename, dir: '')

@@ -1,6 +1,8 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -31,7 +33,6 @@ module Playground
     # other middlewares that connect to the database.
     #
     # config.middleware.insert_after(Rails::Rack::Logger, ::Middleware::HealthCheck)
-
 
     # Configure sensitive parameters which will be filtered from the log file.
     #

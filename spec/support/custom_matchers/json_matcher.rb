@@ -6,11 +6,9 @@
 #
 RSpec::Matchers.define :look_like_json do |_expected|
   match do |actual|
-    begin
-      JSON.parse(actual)
-    rescue JSON::ParserError
-      false
-    end
+    JSON.parse(actual)
+  rescue JSON::ParserError
+    false
   end
 
   failure_message do |actual|
