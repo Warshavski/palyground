@@ -22,12 +22,6 @@ RSpec.describe Author, type: :model do
       end
     end
     context 'when all required params not valid' do
-      let(:params) do
-        {
-          born_in: Date.parse('06-06-2000'),
-          died_in: Date.parse('10-02-1837')
-        }
-      end
       it 'has errors for missing fields' do
         expect(author).not_to be_valid
         errors = author.errors.to_hash
