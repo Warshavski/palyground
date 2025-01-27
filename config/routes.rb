@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   # @see AboutController
   root to: 'about#show', defaults: { format: 'json' }
+  resources :genres, only: [:index, :show]
 end
