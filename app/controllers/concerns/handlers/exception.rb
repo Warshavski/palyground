@@ -21,11 +21,13 @@ module Handlers
         handle_error(e, :not_found, status: :not_found)
       end
 
+      # TODO : setup Rack timeout gem
+      #
       # Return 408 - Request Timeout
       #
-      rescue_from Rack::Timeout::RequestTimeoutException do |e|
-        handle_error(e, :timeout, status: :request_timeout, send_report: true)
-      end
+      # rescue_from Rack::Timeout::RequestTimeoutException do |e|
+      #   handle_error(e, :timeout, status: :request_timeout, send_report: true)
+      # end
     end
 
     private
