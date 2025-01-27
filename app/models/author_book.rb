@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AuthorsBooks < ApplicationRecord
+class AuthorBook < ApplicationRecord
   belongs_to :book
   belongs_to :author
 end

@@ -11,6 +11,7 @@ require 'action_controller/railtie'
 require 'action_mailer/railtie'
 require 'action_view/railtie'
 require 'active_storage/engine'
+require "action_cable/engine"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -40,7 +41,6 @@ module Playground
     config.api_only = true
 
     config.eager_load_paths.push("#{config.root}/lib")
-
     #
     # This middleware needs to precede ActiveRecord::QueryCache and
     # other middlewares that connect to the database.

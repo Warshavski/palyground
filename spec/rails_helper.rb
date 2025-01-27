@@ -106,10 +106,13 @@ RSpec.configure do |config| # rubocop:disable Metrics/BlockLength
 
   config.alias_example_to 'bulletify', bullet: true
 
+  puts "ENV: #{ENV['DATABASE_URL']}"
+
   DatabaseCleaner.url_allowlist = %w[
     postgres://postgres@localhost
     postgres://postgres:postgres@postgres:5432
     postgres://postgres:postgres@localhost:5432
+    postgres://rails:password@localhost:5432/rails_test
   ]
 
   config.before(:suite) do
