@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.shared_context :contract_validation do
+RSpec.shared_context :contract_validation do # rubocop:disable Metrics/BlockLength
   let(:params) do
     cfg = config || {}
 

@@ -36,6 +36,14 @@ gem 'strong_migrations'
 # https://github.com/kickstarter/rack-attack
 gem 'rack-attack'
 
+# Data serialization
+# TODO : prefer to use fast_jsonapi
+gem 'active_model_serializers', '~> 0.9.4'
+
+# https://github.com/Netflix/fast_jsonapi
+# A lightning fast JSON:API serializer for Ruby Objects.
+# gem 'fast_jsonapi'
+
 # Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
 # https://github.com/cyu/rack-cors
 gem 'rack-cors', '>= 1.0.6', require: 'rack/cors'
