@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.3.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
@@ -53,9 +53,13 @@ gem 'rack-cors', '>= 1.0.6', require: 'rack/cors'
 gem 'rack-timeout'
 
 # Static code analyzer and formatter. Keep your code clean.
-gem 'rubocop', require: false
+gem 'rubocop', '~> 1.61.0', require: false
 gem 'rubocop-rails', require: false
 gem 'rubocop-rspec', require: false
+gem 'rubocop-rake', require: false
+gem 'panolint'
+gem 'rubocop-discourse'
+gem 'concurrent-ruby', '1.3.4'  
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -71,6 +75,7 @@ group :development, :test do
   # Shim to load environment variables from .env into ENV in development.
   # https://github.com/bkeepers/dotenv
   gem 'dotenv-rails'
+  gem 'bundler-audit'
 end
 
 group :development do

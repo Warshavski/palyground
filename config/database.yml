@@ -2,11 +2,11 @@ default: &default
   adapter: postgresql
   encoding: unicode
   url: <%= ENV.fetch('DATABASE_URL') %>
-  host: <%= ENV.fetch('DB_HOST') %>
-  username: <%= ENV.fetch('DB_USER') %>
+  host: <%= ENV.fetch('DB_HOST', 'postgres') %>
+  username: <%= ENV.fetch('DB_USER', 'rails') %>
   pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
-  password: <%= ENV.fetch('DB_PASSWORD') %>
-  database: <%= "#{ENV.fetch('DB_NAME')}_development" %>
+  password: <%= ENV.fetch('DB_PASSWORD', 'password') %>
+  database: <%= "#{ENV.fetch('DB_NAME', 'rails')}_development" %>
   target_session_attrs: read-write
 
 development:
@@ -14,9 +14,9 @@ development:
 
 test:
   <<: *default
-  database: <%= "#{ENV.fetch('DB_NAME')}_test" %>
+  database: <%= "#{ENV.fetch('DB_NAME', 'rails')}_test" %>
 
 production:
   <<: *default
-  database: <%= "#{ENV.fetch('DB_NAME')}" %>
+  database: <%= "#{ENV.fetch('DB_NAME', 'rails')}" %>
   pool: 12
